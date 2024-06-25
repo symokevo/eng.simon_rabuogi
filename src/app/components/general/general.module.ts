@@ -5,10 +5,16 @@ import { HeaderComponent } from './header/header.component'
 import { NgbModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+export function HttpLoaderFactory(http: HttpClient){}
+
 @NgModule({
-  declarations: [],
+  declarations: [
+    HeaderComponent,
+    FooterComponent
+  ],
   imports: [
     CommonModule,
     NgbModule,
@@ -16,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NgbDropdownModule,
     FormsModule,
     ReactiveFormsModule,
-  ]
+  ],
+  exports: [HeaderComponent, FooterComponent]
 })
 export class GeneralModule { }
